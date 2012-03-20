@@ -3,8 +3,7 @@ var configloader = require('./loadconfig.js'),
 	zmq = require("zmq"),
 	socket = zmq.createSocket('push'),
 	logme = require('logme'),
-	urlsToTest,
-	ventID = genID(8),
+	urlsToTest, ventID = genID(8),
 	config, log = {
 		debug: function(msg) {
 			logme.debug(msg);
@@ -45,7 +44,7 @@ configloader('./config.json', function(configFromFile) {
 								throw 'could not get test urls from config';
 							} else {
 								urlsToTest = result;
-								var eventID = genID(25) ;
+								var eventID = genID(25);
 								vent.send('start_test', {
 									time: new Date().getTime(),
 									ventID: ventID,
@@ -55,13 +54,16 @@ configloader('./config.json', function(configFromFile) {
 										if (err) {
 											log.error(result);
 										} else {
-											vent.send('end_test', {
-												time: new Date().getTime(),
-												ventID: ventID,
-												eventID: eventID
-											}, function(error, result) {
-												log.info('all tests sent');
-											});
+											log.info('waiting for ops to complete...');
+											setTimeout(function() {
+												vent.send('end_test', {
+													time: new Date().getTime(),
+													ventID: ventID,
+													eventID: eventID
+												}, function(error, result) {
+													log.info('all tests sent');
+												});
+											}, 5000);
 										}
 									});
 								});

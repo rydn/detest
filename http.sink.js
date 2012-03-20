@@ -3,8 +3,8 @@ var request = require('request'),
 	zmq = require("zmq"),
 	mongo = require('mongojs'),
 	socket = zmq.createSocket('pull'),
-	eventID,
-	logme = require('logme'),
+	eventID, logme = require('logme'),
+	fs = require('fs'),
 	config, log = {
 		debug: function(msg) {
 			logme.debug(msg);
@@ -54,33 +54,30 @@ var sink = {
 			var expect = msgObj.data.expect;
 			var url = msgObj.data.url;
 			httpTest(url, expect, function(err, result) {
+				httpTesting = false;
 				if (err) {
 					log.error(result);
 				} else {
 					log.info(result.url + ' tested, expectation: [' + result.expectation + ']');
 					sink.results.push(result);
+
 				}
 			});
 			break;
-			case 'start_test':
-				eventID = msgObj.data.eventID;
-				sink.results.shift();
-				log.info('starting test session, eventID:' + msgObj.data.eventID + ' ventID: ' + msgObj.data.ventID);
+		case 'start_test':
+			eventID = msgObj.data.eventID;
+			sink.results.shift();
+			log.info('starting test session, eventID:' + msgObj.data.eventID + ' ventID: ' + msgObj.data.ventID);
 			break;
-			case 'end_test':
-				db.write(sink.results, function(er, result)
-				{
-					if(!(er))
-					{
-						log.info('Test session for: eventID:' + msgObj.data.eventID + ' now closed for new objects');	
-					}
-					else
-					{
-						log.error('Failed to save results to db, error is:'+ result);
-					}
-					
-				});
-				
+		case 'end_test':
+			log.info('vent sending end');
+			fs.writeFile('./tmp/' + msgObj.data.eventID + '.json', JSON.stringify(sink.results), 'utf8', function(err) {
+				if (!(err)) {
+					log.info('saved to file');
+				} else {
+					log.error('failed to save to file');
+				}
+			});
 			break;
 		default:
 			log.warn('unknown event received, data:' + require('util').inspect(msgObj));
@@ -89,7 +86,10 @@ var sink = {
 	}
 };
 
+var httpTesting = false;
+
 function httpTest(url, expect, callback) {
+	httpTesting = true;
 	var start = new Date().getTime();
 	var expectaction = 'notmet';
 	if (url) {
@@ -117,7 +117,7 @@ function httpTest(url, expect, callback) {
 				}
 			}
 			var responseObj = {
-				response: response,
+				response: response.statusCode,
 				body: body,
 				timeTaken: total,
 				expectation: expectaction,
@@ -134,6 +134,7 @@ function httpTest(url, expect, callback) {
 }
 //array of chars to use
 var CHARS = '0123456789abcdefghijklmnopqrstuvwxyz'.split('');
+
 function genID(len, radix) {
 	var chars = CHARS,
 		uuid = [],
@@ -156,21 +157,32 @@ function genID(len, radix) {
 	return uuid.join('');
 }
 var db = {
-	write: function(data, callback)
-	{
-		if(data)
-		{
-			mongo.test_results.save(data, function(err){
-				if(err)
-				{
+	write: function(result, callback) {
+		try {
+			mongo.test_results.save(result, function(err) {
+				if (err) {
 					log.error(err);
 					callback(true, err);
-				}
-				else
-				{
+				} else {
+					log.info('results saved to db, results:' + result);
 					callback(false, 'saved');
 				}
 			});
+		} catch (ex) {
+			log.error(ex);
+			try {
+				mongo.test_results.save(result, function(err) {
+					if (err) {
+						log.error(err);
+						callback(true, err);
+					} else {
+						log.info('results saved to db, results:' + result);
+						callback(false, 'saved');
+					}
+				});
+			} catch (ex) {
+				log.error(ex);
+			}
 		}
 	}
 };

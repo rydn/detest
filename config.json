@@ -6,7 +6,7 @@
 		"conStr": "tcp://10.0.0.20:55201"
 	},
 	"db":{
-		"constr":"mongodb://localhost:28175/txtr"
+		"constr":"mongodb://localhost:27017/txtr"
 	},
 	"httpSink": {
 		"bindAddr": {
@@ -15,7 +15,7 @@
 			"conStr": "tcp://10.0.0.20:55201"
 		},
 		"db":{
-			"constr":"mongodb://localhost:28175/txtr"
+			"constr":"mongodb://localhost:27017/txtr"
 		}
 	},
 	"vent": {
