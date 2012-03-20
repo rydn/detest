@@ -1,0 +1,39 @@
+{
+	"loglevel": "info",
+	"bindAddr": {
+		"host": "10.0.0.20",
+		"port": "55201",
+		"conStr": "tcp://10.0.0.20:55201"
+	},
+	"db":{
+		"constr":"mongodb://localhost:28175/txtr"
+	},
+	"httpSink": {
+		"bindAddr": {
+			"host": "10.0.0.20",
+			"port": "55201",
+			"conStr": "tcp://10.0.0.20:55201"
+		},
+		"db":{
+			"constr":"mongodb://localhost:28175/txtr"
+		}
+	},
+	"vent": {
+		"name": "TestRunVent"
+	},
+	"tests": {
+		"httpTests": [{
+			"url": "http://10.0.0.20:5000/ping",
+			"expect": {
+				"type": "body",
+				"data": "pong"
+			}
+		}, {
+			"url": "http://10.0.0.20/",
+			"expect": {
+				"type": "responseCode",
+				"data": 200
+			}
+		}]
+	}
+}
