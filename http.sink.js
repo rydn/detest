@@ -74,6 +74,14 @@ var sink = {
 			fs.writeFile('./tmp/' + msgObj.data.eventID + '.json', JSON.stringify(sink.results), 'utf8', function(err) {
 				if (!(err)) {
 					log.info('saved to file');
+					db.write(sink.results, function(err, res) {
+						if (!(err)) {
+							log.info('saved to db');
+						} else {
+							log.error('database write fail');
+						}
+
+					});
 				} else {
 					log.error('failed to save to file');
 				}

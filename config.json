@@ -5,6 +5,10 @@
 		"port": "55201",
 		"conStr": "tcp://10.0.0.20:55201"
 	},
+	"http_server":{
+		"port":57184,
+		"logRequests":true
+	},
 	"db":{
 		"constr":"mongodb://localhost:27017/txtr"
 	},
