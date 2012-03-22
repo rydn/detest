@@ -3,7 +3,7 @@
 	"bindAddr": {
 		"host": "10.0.0.20",
 		"port": "55201",
-		"conStr": "tcp://10.0.0.20:55201"
+		"conStr": "tcp://127.0.0.1:55201"
 	},
 	"http_server":{
 		"port":57184,

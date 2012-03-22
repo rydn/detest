@@ -1,10 +1,10 @@
 var template = '<div class="container-fluid">';
-template += '<div class="row-fluid">';
+template += '<div class="row">';
 template += '{{#testplans}}';
-template += '<div class="span12">';
+template += '<div class="container">';
 template += '<h2>{{date}}</h2>';
 template += '<br /><br />';
-template += '<blockquote>';
+
 template += '<table class="table">';
 template += '<thead>';
 template += '<tr>';
@@ -28,7 +28,7 @@ template += '{{/tests}}';
 template += '</tbody>';
 template += '</table>';
 template += '</div>';
-template += '</blockquote>';
+
 template += '{{/testplans}}';
 template += '</div>';
 exports.template += template;

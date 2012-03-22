@@ -1,0 +1,3 @@
+nohup node sinks/http.sink.js > logs/http_sink.log&
+nohup node vents/vent.js > logs/vent.log&
+node app.js
