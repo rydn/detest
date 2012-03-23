@@ -30,20 +30,9 @@ var request = require('request'),
 ///////////////////////////////////////////
 //SOCKET CONFIGURATION
 ///////////////////////////////////////////
-var socket = zmq.createSocket('xrep');
+var socket = zmq.createSocket('rep');
 socket.identity = '' + process.pid;
-socket.on('message', function(envelope, id, type, data){
-	log.debug('message from test requester:envelope:["' + envelope +'"] id:["'+ id+'"] type:["'+ type +'"] data:["'+ data+'"]');
-	if (data) {
-		responder.msgHandler(data, type, id, envelope, function(result){
-			socket.send([id, type, result]);
-		});
-	}
-	else
-	{
-		log.error(data);
-	}
-});
+
 ///////////////////////////////////////////
 //MAIN LOGIC MODULE
 ///////////////////////////////////////////
@@ -65,8 +54,8 @@ var responder = {
 			switch (msgType.toString()) {
 			case 'vent_up':
 				log.info('contacted by ventalator sending confirmation...');
-				callback('responderHere');
 				log.info('responder is ventilated, waiting on tasks');
+				callback('responderHere');
 				break;
 			case 'test_case':
 				log.info('test case received, msgObj:' + require('util').inspect(msgObj));
@@ -96,10 +85,14 @@ var responder = {
 						db.write(responder.results, function(err, res) {
 							if (!(err)) {
 								callback('saved to db');
-							callback({msg:'saved to db'}, 'test_case_complete');
+								callback({
+									msg: 'saved to db'
+								}, 'test_case_complete');
 							} else {
 								callback('database write fail');
-								callback({msg:'database write fail'}, 'test_case_complete');
+								callback({
+									msg: 'database write fail'
+								}, 'test_case_complete');
 							}
 
 						});
@@ -109,7 +102,7 @@ var responder = {
 				});
 				break;
 			default:
-				callback('unknown event received, eventID: '+require('util').inspect(msgType.toString())+' data:' + require('util').inspect(msgObj));
+				callback('unknown event received, eventID: ' + require('util').inspect(msgType.toString()) + ' data:' + require('util').inspect(msgObj));
 				break;
 			}
 		} else {
@@ -118,10 +111,9 @@ var responder = {
 	}
 };
 var sockResponder = {
-	send: function(msgObj, eventType)
-	{
+	send: function(msgObj, eventType) {
 		var sendAr = [process.pid, eventType, JSON.stringify(msgObj)];
-		log.info('replying with: '+ require('util').inspect(sendAr));
+		log.info('replying with: ' + require('util').inspect(sendAr));
 		socket.send(sendAr);
 	}
 };
@@ -154,19 +146,19 @@ function httpTest(url, expect, callback) {
 				} else {
 					expectaction = 'notmet';
 				}
-			
-			var responseObj = {
-				response: response.statusCode,
-				body: body,
-				timeTaken: total,
-				expectation: expectaction,
-				url: url,
-				completed: new Date().toString(),
-				testID: genID(8),
-				eventID: eventID
-			};
-			callback(false, responseObj);
-		}
+
+				var responseObj = {
+					response: response.statusCode,
+					body: body,
+					timeTaken: total,
+					expectation: expectaction,
+					url: url,
+					completed: new Date().toString(),
+					testID: genID(8),
+					eventID: eventID
+				};
+				callback(false, responseObj);
+			}
 		});
 	} else {
 		callback(true, 'no url supplied');
@@ -243,7 +235,32 @@ configloader('/opt/detest/config.json', function(configFromFile) {
 		log.info('Connecting to zmq socket located at: tcp://' + config.bindAddr.host + ':' + config.bindAddr.port + '...');
 		socket.connect(config.bindAddr.conStr);
 		log.info('socket with id: "' + socket.identity + '" is connected, ready and waiting for requests');
+
 	} else {
 		log.error('Failed to read from config');
 	}
 });
+socket.on('message', function(envelope, id, type, data) {
+			log.debug('message from test requester: envelope:["' + envelope + '"] id:["' + id + '"] type:["' + type + '"] data:["' + data + '"]');
+			if (type) {
+				//[id, eventName, data]
+				responder.msgHandler(data, type, id, envelope, function(result) {
+					log.info('MSGHAND returned: ' + result);
+					result = JSON.stringify({
+						test_result: result
+					});
+					socket.send([envelope, id, type, result]);
+				});
+			} else {
+				log.error(data);
+				var emptyret = JSON.stringify({return: null});
+				socket.send(['empty', emptyret]);
+			}
+		});
+		socket.on('error', function(err) {
+			if(err)
+			{
+			log.error(err);	
+			}
+			
+		});

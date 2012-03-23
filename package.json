@@ -2,7 +2,7 @@
   "author": "Ryan Dick <noxinoobin@gmail.com> (http://quarkflavour.net)",
   "name": "detest",
   "description": "A distributed load testing and request performance analysis engine written in node using MongoDb for data and ZeroMq for messaging",
-  "version": "0.0.9",
+  "version": "0.0.12",
   "homepage": "http://bitbucket.org/ryandick/detest/",
   "repository": {
     "type": "git",

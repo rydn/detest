@@ -1,7 +1,7 @@
 //dependencies
 var configloader = require('../loadconfig.js'),
 	zmq = require("zmq"),
-	socket = zmq.createSocket('xreq'),
+	socket = zmq.createSocket('req'),
 	logme = require('logme'),
 	urlsToTest, ventID = genID(8),
 	config, log = {
@@ -23,36 +23,6 @@ var configloader = require('../loadconfig.js'),
 	};
 
 log.info('Starting up, attempting to read from config...');
-socket.on('message', function(envelope, id, type, data){
-	try
-	{
-		if(data)
-		{
-		data = data.toString();	
-		}
-		if(type)
-		{
-		type = type.toString();
-		}
-		if(id)
-		{
-		id = id.toString();
-		}
-		if(envelope)
-		{
-		envelope = envelope.toString();
-		}
-		
-	}
-	catch(ex)
-	{
-
-	}
-	log.error('from responder: '+ require('util').inspect(data) + ' ' + require('util').inspect(type) + require('util').inspect(id) + ' ' + require('util').inspect(envelope));
-});
-socket.on('error', function() {
-	log.error('socket encountered a error');
-});
 configloader('/opt/detest/config.json', function(configFromFile) {
 	if (configFromFile.hasErr) {
 		log.error('...failed to read from config, bailing out!');
@@ -66,7 +36,32 @@ configloader('/opt/detest/config.json', function(configFromFile) {
 		var socketIdent = '' + process.pid;
 		socket.identity = socketIdent;
 		socket.bind(config.bindAddr.conStr, function(err) {
-			log.error(err);
+			socket.on('message', function(envelope, id, type, data) {
+				try {
+					if (data) {
+						data = data.toString();
+					}
+					if (type) {
+						type = type.toString();
+					}
+					if (id) {
+						id = id.toString();
+					}
+					if (envelope) {
+						envelope = envelope.toString();
+					}
+
+				} catch (ex) {
+
+				} finally {
+					log.debug('from responder: data[' + require('util').inspect(data) + '] type[' + require('util').inspect(type) + '] id[' + require('util').inspect(id) + '] envelope[' + require('util').inspect(envelope) + ']');
+				}
+
+			});
+			socket.on('error', function() {
+				log.error('socket encountered a error');
+			});
+
 
 			log.info('...Message ventalator up informing all sinks, identity is: ' + ventID);
 			vent.send('vent_up', JSON.stringify({
@@ -220,12 +215,12 @@ var vent = {
 			data: data,
 			ventName: config.vent.name
 		};
-		socket.send([ventID, eventType, JSON.stringify(data)]);
+		socket.send([process.pid, 'testvent', eventType, JSON.stringify(data)]);
 		callback(false, data);
 		return;
 	},
 	sendSync: function(eventType, data) {
-		socket.send([ventID, eventType, JSON.stringify(data)]);
+		socket.send([process.pid, 'testvent', eventType, JSON.stringify(data)]);
 	}
 
 };
