@@ -1,228 +1,66 @@
-[36m- INFO -[39m HTTP screenshot shooter sink starting up, attempting to read from config...
-[36m- INFO -[39m ...config for sink loaded
-[36m- INFO -[39m Connecting to zmq socket located at: tcp://10.0.0.20:55201...
-[36m- INFO -[39m ...connected to bound socket waiting for ventalators
-[36m- INFO -[39m HTTP screenshot shooter sink starting up, attempting to read from config...
-[36m- INFO -[39m ...config for sink loaded
-[36m- INFO -[39m Connecting to zmq socket located at: tcp://10.0.0.20:55201...
-[36m- INFO -[39m ...connected to bound socket waiting for ventalators
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332425346092,"ventID":"43163912","eventID":"2402716359009921456591675"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[36m- INFO -[39m HTTP screenshot shooter sink starting up, attempting to read from config...
-[36m- INFO -[39m ...config for sink loaded
-[36m- INFO -[39m Connecting to zmq socket located at: tcp://10.0.0.20:55201...
-[36m- INFO -[39m ...connected to bound socket waiting for ventalators
-[35m- DEBUG -[39m message from ventalator:{"event":"end_test","data":{"time":1332425351094,"ventID":"43163912","eventID":"2402716359009921456591675"},"ventName":"TestRunVent"}
-[36m- INFO -[39m HTTP screenshot shooter sink starting up, attempting to read from config...
-[36m- INFO -[39m ...config for sink loaded
-[36m- INFO -[39m Connecting to zmq socket located at: tcp://10.0.0.20:55201...
-[36m- INFO -[39m ...connected to bound socket waiting for ventalators
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332425992024,"ventID":"69678191","eventID":"5795476296454836462614702"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[36m- INFO -[39m HTTP screenshot shooter sink starting up, attempting to read from config...
-[36m- INFO -[39m ...config for sink loaded
-[36m- INFO -[39m Connecting to zmq socket located at: tcp://10.0.0.20:55201...
-[36m- INFO -[39m ...connected to bound socket waiting for ventalators
-[35m- DEBUG -[39m message from ventalator:{"event":"end_test","data":{"time":1332425997026,"ventID":"69678191","eventID":"5795476296454836462614702"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332426196123,"ventID":"76972035","eventID":"2184093883989792243702596"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332426475948,"ventID":"50984084","eventID":"8925718874812808091551999"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332426554637,"ventID":"76829856","eventID":"2460432589051248691689494"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"end_test","data":{"time":1332426559639,"ventID":"76829856","eventID":"2460432589051248691689494"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332426641661,"ventID":"93905860","eventID":"5195645734840481925065557"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"end_test","data":{"time":1332426646672,"ventID":"93905860","eventID":"5195645734840481925065557"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332426716910,"ventID":"99473396","eventID":"9319366508501967725970974"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"end_test","data":{"time":1332426721916,"ventID":"99473396","eventID":"9319366508501967725970974"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332426738486,"ventID":"73046414","eventID":"4853557323344162170604416"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332426790256,"ventID":"05001840","eventID":"4963262793165439391772349"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332426802822,"ventID":"09615451","eventID":"5967248586603821017668439"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"end_test","data":{"time":1332426807828,"ventID":"09615451","eventID":"5967248586603821017668439"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332426844832,"ventID":"77221975","eventID":"9941075551652862400635076"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"end_test","data":{"time":1332426849834,"ventID":"77221975","eventID":"9941075551652862400635076"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332426953907,"ventID":"38419182","eventID":"7777270463408891339246426"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"end_test","data":{"time":1332426958909,"ventID":"38419182","eventID":"7777270463408891339246426"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332427018910,"ventID":"84141618","eventID":"0885077716739432405475937"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"end_test","data":{"time":1332427028924,"ventID":"84141618","eventID":"0885077716739432405475937"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332427042568,"ventID":"42817260","eventID":"6929146564382883937320641"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332427053976,"ventID":"81899999","eventID":"0688108171655107554725707"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332427124444,"ventID":"79297958","eventID":"7556779838177940742753974"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332427165644,"ventID":"21504805","eventID":"9085799122218118539350648"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"end_test","data":{"time":1332427170647,"ventID":"21504805","eventID":"9085799122218118539350648"},"ventName":"TestRunVent"}
-[36m- INFO -[39m HTTP sink starting up, attempting to read from config...
-[36m- INFO -[39m ...config for sink loaded
-[36m- INFO -[39m Connecting to zmq socket located at: tcp://10.0.0.20:55201...
-[36m- INFO -[39m ...connected to bound socket waiting for ventalators
-[36m- INFO -[39m HTTP screenshot shooter sink starting up, attempting to read from config...
-[36m- INFO -[39m ...config for sink loaded
-[36m- INFO -[39m Connecting to zmq socket located at: tcp://10.0.0.20:55201...
-[36m- INFO -[39m ...connected to bound socket waiting for ventalators
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332427210748,"ventID":"80750753","eventID":"8496793580631713688597243"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"end_test","data":{"time":1332427215753,"ventID":"80750753","eventID":"8496793580631713688597243"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332427303393,"ventID":"99617133","eventID":"9390221823571968008345743"},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20:5000/ping","expect":{"type":"body","data":"pong"}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"test_case","data":{"url":"http://10.0.0.20/","expect":{"type":"responseCode","data":200}},"ventName":"TestRunVent"}
-[35m- DEBUG -[39m message from ventalator:{"event":"end_test","data":{"time":1332427308397,"ventID":"99617133","eventID":"9390221823571968008345743"},"ventName":"TestRunVent"}
-[36m- INFO -[39m HTTP screenshot shooter sink starting up, attempting to read from config...
-[36m- INFO -[39m ...config for sink loaded
-[36m- INFO -[39m Connecting to zmq socket located at: tcp://10.0.0.20:55201...
-[36m- INFO -[39m ...bound socket waiting for connected requesting ventalators
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"vent_up","data":null,"ventName":"TestRunVent"}
-[36m- INFO -[39m contacted by ventalator sending confirmation...
-[36m- INFO -[39m sink is ventilated, waiting on tasks
-[35m- DEBUG -[39m message from ventalator:{"event":"start_test","data":{"time":1332429116433,"ventID":"28299784","eventID":"5954071335469805488056527"},"ventName":"TestRunVent"}
+
+node.js:201
+        throw e; // process.nextTick error, or 'error' event on first tick
+              ^
+Error: Cannot find module '/opt/detest/vents/vent.js'
+    at Function._resolveFilename (module.js:332:11)
+    at Function._load (module.js:279:25)
+    at Array.0 (module.js:479:10)
+    at EventEmitter._tickCallback (node.js:192:40)
+
+node.js:201
+        throw e; // process.nextTick error, or 'error' event on first tick
+              ^
+Error: Cannot find module '/opt/detest/sinks/http.sink.js'
+    at Function._resolveFilename (module.js:332:11)
+    at Function._load (module.js:279:25)
+    at Array.0 (module.js:479:10)
+    at EventEmitter._tickCallback (node.js:192:40)
+[36m- INFO -[39m http server now running on port:57184
+[36m- INFO -[39m [Monday, June 4th 2012, 2:15:56 pm] 127.0.0.1 --GET--> /
+[36m- INFO -[39m [Monday, June 4th 2012, 2:15:56 pm] 127.0.0.1 --GET--> /assets/css/bootstrap.css
+[36m- INFO -[39m [Monday, June 4th 2012, 2:15:56 pm] 127.0.0.1 --GET--> /assets/css/bootstrap-responsive.css
+[36m- INFO -[39m [Monday, June 4th 2012, 2:15:56 pm] 127.0.0.1 --GET--> /assets/js/jquery.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:15:56 pm] 127.0.0.1 --GET--> /assets/js/bootstrap.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:15:56 pm] 127.0.0.1 --GET--> /assets/js/script.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:15:56 pm] 127.0.0.1 --GET--> /tests/
+[35m- DEBUG -[39m unique days found: [] unique ids found: [] total results found:0
+[36m- INFO -[39m [Monday, June 4th 2012, 2:15:56 pm] 127.0.0.1 --GET--> /assets/ico/favicon.ico
+[36m- INFO -[39m [Monday, June 4th 2012, 2:16:42 pm] 127.0.0.1 --GET--> /
+[36m- INFO -[39m [Monday, June 4th 2012, 2:16:42 pm] 127.0.0.1 --GET--> /assets/css/bootstrap.css
+[36m- INFO -[39m [Monday, June 4th 2012, 2:16:42 pm] 127.0.0.1 --GET--> /assets/css/bootstrap-responsive.css
+[36m- INFO -[39m [Monday, June 4th 2012, 2:16:42 pm] 127.0.0.1 --GET--> /assets/js/jquery.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:16:42 pm] 127.0.0.1 --GET--> /assets/js/bootstrap.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:16:42 pm] 127.0.0.1 --GET--> /assets/js/script.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:16:42 pm] 127.0.0.1 --GET--> /tests/
+[35m- DEBUG -[39m unique days found: [ 'Monday, June 4th 2012' ] unique ids found: [ '4735032120448041843810994' ] total results found:2
+[36m- INFO -[39m [Monday, June 4th 2012, 2:16:42 pm] 127.0.0.1 --GET--> /assets/ico/favicon.ico
+[36m- INFO -[39m [Monday, June 4th 2012, 2:17:32 pm] 127.0.0.1 --GET--> /
+[36m- INFO -[39m [Monday, June 4th 2012, 2:17:33 pm] 127.0.0.1 --GET--> /assets/css/bootstrap.css
+[36m- INFO -[39m [Monday, June 4th 2012, 2:17:33 pm] 127.0.0.1 --GET--> /assets/css/bootstrap-responsive.css
+[36m- INFO -[39m [Monday, June 4th 2012, 2:17:33 pm] 127.0.0.1 --GET--> /assets/js/jquery.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:17:33 pm] 127.0.0.1 --GET--> /assets/js/bootstrap.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:17:33 pm] 127.0.0.1 --GET--> /assets/js/script.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:17:33 pm] 127.0.0.1 --GET--> /tests/
+[35m- DEBUG -[39m unique days found: [ 'Monday, June 4th 2012' ] unique ids found: [ '4735032120448041843810994', '9545783706534779857538448' ] total results found:4
+[36m- INFO -[39m [Monday, June 4th 2012, 2:17:33 pm] 127.0.0.1 --GET--> /assets/ico/favicon.ico
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:24 pm] 127.0.0.1 --GET--> /
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:24 pm] 127.0.0.1 --GET--> /assets/css/bootstrap.css
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:24 pm] 127.0.0.1 --GET--> /assets/css/bootstrap-responsive.css
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:24 pm] 127.0.0.1 --GET--> /assets/js/jquery.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:24 pm] 127.0.0.1 --GET--> /assets/js/bootstrap.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:24 pm] 127.0.0.1 --GET--> /assets/js/script.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:24 pm] 127.0.0.1 --GET--> /tests/
+[35m- DEBUG -[39m unique days found: [ 'Monday, June 4th 2012' ] unique ids found: [ '4735032120448041843810994', '9545783706534779857538448' ] total results found:4
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:24 pm] 127.0.0.1 --GET--> /assets/ico/favicon.ico
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:45 pm] 127.0.0.1 --GET--> /
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:45 pm] 127.0.0.1 --GET--> /assets/css/bootstrap.css
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:45 pm] 127.0.0.1 --GET--> /assets/css/bootstrap-responsive.css
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:45 pm] 127.0.0.1 --GET--> /assets/js/jquery.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:45 pm] 127.0.0.1 --GET--> /assets/js/bootstrap.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:45 pm] 127.0.0.1 --GET--> /assets/js/script.js
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:45 pm] 127.0.0.1 --GET--> /tests/
+[35m- DEBUG -[39m unique days found: [ 'Monday, June 4th 2012' ] unique ids found: [ '4735032120448041843810994',
+  '9545783706534779857538448',
+  '5583618638985731561696924' ] total results found:6
+[36m- INFO -[39m [Monday, June 4th 2012, 2:18:45 pm] 127.0.0.1 --GET--> /assets/ico/favicon.ico

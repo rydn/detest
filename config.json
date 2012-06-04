@@ -1,7 +1,7 @@
 {
 	"loglevel": "info",
 	"bindAddr": {
-		"host": "10.0.0.20",
+		"host": "10.0.0.175",
 		"port": "55201",
 		"conStr": "tcp://127.0.0.1:55201"
 	},
@@ -14,9 +14,9 @@
 	},
 	"httpSink": {
 		"bindAddr": {
-			"host": "10.0.0.20",
+			"host": "10.0.0.175",
 			"port": "55201",
-			"conStr": "tcp://10.0.0.20:55201"
+			"conStr": "tcp://10.0.0.175:55201"
 		},
 		"db":{
 			"constr":"mongodb://localhost:27017/txtr"
@@ -27,13 +27,13 @@
 	},
 	"tests": {
 		"httpTests": [{
-			"url": "http://10.0.0.20:5000/ping",
+			"url": "http://proc.txtr.co.za/ping",
 			"expect": {
 				"type": "body",
 				"data": "pong"
 			}
 		}, {
-			"url": "http://10.0.0.20/",
+			"url": "http://www.txtr.co.za/index.php",
 			"expect": {
 				"type": "responseCode",
 				"data": 200
